@@ -1,4 +1,4 @@
-mac_on_the_web
+Mac On The Web
 ==============
 
 Demonstration of Mac OSX on the web
