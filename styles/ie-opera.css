@@ -1,0 +1,25 @@
+#ie-opera{
+	position: fixed;
+	top:0px;
+	left: 0px;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-image: url(../files/notifications/notification-background.png);
+	text-align: center;
+	z-index: 5000;
+	color:white;
+	font-size: 20px;
+}
+#message{
+	position: relative;
+	top:45%;
+	text-shadow:0px 0px 5px #000;
+}
+#message a{
+	color: white;
+	text-decoration: none;
+}
+#message a:hover{
+	text-decoration: underline;
+}

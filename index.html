@@ -1,0 +1,331 @@
+<!DOCTYPE html lang="en">
+<html>
+<head>
+	<title>Mac on The Web</title>
+	<link rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/igh0zt/ios7-style-metro-ui/128/MetroUI-Folder-OS-OS-Apple-icon.png">
+	<link rel="stylesheet" type="text/css" href="styles/mac.css">
+	<link rel="stylesheet" type="text/css" href="styles/ie-opera.css">
+	<link rel="stylesheet" type="text/css" href="styles/dock.css">
+	<link rel="stylesheet" type="text/css" href="styles/finder-bar.css">
+	<link rel="stylesheet" type="text/css" href="styles/context-menu.css">
+	<link rel="stylesheet" type="text/css" href="styles/not-calendar.css">
+	<script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="scripts/js.js"></script>
+	<script type="text/javascript" src="apps/jsconsole/console.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+</head>
+<body oncontextmenu="return false;" id="main-box">
+	<div class="my-container">
+		<div id="ie-opera" class="opera"> 
+			<div id="message">
+				<p>Um, we do not support Opera! Sorry 'bout that.<br>
+					Try <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> instead.
+				</p>
+			</div>
+		</div>
+		<div id="ie-opera" class="ie" style="display:block;"> 
+			<div id="message">
+				<p>Um, we do not support Internet Explorer! Sorry 'bout that.<br>
+					Try <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> instead.
+				</p>
+			</div>
+		</div>
+		<div id="wrapper-back"><img src="files/mavericks.jpg">
+		</div>
+		<ul id="contextmenu" class="menu-basic">
+			<div style="padding:5px 0px">
+				<li>New Folder</li>
+				<li>New Burn Folder</li>
+				<hr>
+				<li>Get Info</li>
+				<hr>
+				<li>Change Desktop Background...</li>
+				<li>Clean Up</li>
+				<li class="next-menu">Arrange By <img src="files/arrow.png">
+					<ul class="menu-basic c-arrange">
+						<div style="padding:5px 0px">
+							<li>Name</li>
+							<li>Size</li>
+							<li>Type</li>
+							<li>Date</li>
+							<hr>
+							<li>Auto Arrange</li>
+						</div>
+					</ul>
+				</li>
+				<li>Show View Options</li>
+				<hr>
+				<li class="next-menu">More <img src="files/arrow.png">
+					<ul class="menu-basic c-more">
+						<div style="padding:5px 0px">
+							<li class="next-menu">New File <img src="files/arrow.png">
+								<ul class="menu-basic c-file">
+									<div style="padding:5px 0px">
+										<li>Blank File</li>
+										<li>Shortcut</li>
+										<hr>
+										<li>Text File</li>
+										<li>Image</li>
+										<li>Document</li>
+										<li>Spreadsheet</li>
+										<li>Presentation</li>
+										<li>Archive</li>
+									</div>
+								</ul>
+							</li>
+							<hr>
+							<li>Finder</li>
+							<li>Preferences</li>
+							<li onclick="$('.terminal').show();">Terminal</li>
+						</div>
+					</ul>
+				</li>
+			</div>
+		</ul>
+		<div id="wrapper">
+			<div id="finder-bar">
+				<ul class="finder-menu f-menu-left">
+					<li class="img"><img src="files/apple-icon.png">
+						<ul>
+							<li onclick="$('.about-mac').show();">About This Mac</li>
+							<li>Software Updates...</li>
+							<li>App Store...</li>
+							<hr>
+							<li>System Preferences</li>
+							<li>Dock</li>
+							<hr>
+							<li>Recent Items</li>
+							<hr>
+							<li>Force Quit...</li>
+							<hr>
+							<li>Sleep</li>
+							<li>Shutdown...</li>
+							<li>Restart...</li>
+							<hr>
+							<li>Logout...</li>
+						</ul>
+					</li>
+					<li><strong>Finder</strong>
+						<ul>
+							<li>About Finder</li>
+							<hr>
+							<li>Preferences</li>
+							<hr>
+							<li>Secure Empty Trash</li>
+							<hr>
+							<li>Services</li>
+							<hr>
+							<li>Hide Finder</li>
+							<li>Hide Others</li>
+							<li class="disabled">Show All</li>
+						</ul>
+					</li>
+					<li>File</li>
+					<li>Edit
+						<ul>
+							<li class="disabled">Undo</li>
+							<li class="disabled">Redo</li>
+							<hr>
+							<li class="disabled">Cut</li>
+							<li class="disabled">Copy</li>
+							<li class="disabled">Paste</li>
+							<li>Select All</li>
+							<hr>
+							<li>Show Clipboard</li>
+							<hr>
+							<li>Special Characters...</li>
+						</ul>
+					</li>
+					<li>View</li>
+					<li>Go
+						<ul>
+							<li>Back</li>
+							<li>Forward</li>
+							<li>Enclosing Folder</li>
+						</ul>
+					</li>
+					<li>Window
+						<ul>
+							<li class="disabled">Minimize</li>
+							<li class="disabled">Zoom</li>
+							<li class="disabled">Cycle Through Windows</li>
+							<hr>
+							<li>Bring To Front</li>
+						</ul>
+					</li>
+					<li>Help</li>
+				</ul>
+				<ul class="finder-menu f-menu-right" style="right:0px;">
+					<li id="wifi-note" class="img">
+						<img src="files/notifications/wifi.png" id="wifi-icon">
+					</li>
+					<p id="wifi-note-menu" class="img notif-box">
+						<script type="text/javascript">
+						setInterval(checkConnection,1000);
+						</script>
+					</p>
+					<li id="volume-note"  class="img">
+						<img src="files/notifications/volume.png">
+					</li>
+					<p id="volume-note-menu" class="img notif-box">
+						<script type="text/javascript">
+						document.getElementById("volume-note-menu").innerHTML="Volume Status Unavailable"
+						</script>
+					</p>
+					<li id="battery-note" class="img">
+						<img src="files/notifications/battery.png" id="bat-icon">
+					</li>
+					<p id="battery-note-menu" class="img notif-box">
+						<script type="text/javascript">
+						setInterval(checkBattery,1000);
+						</script>
+					</p>
+					<li id="date_time">
+						<script type="text/javascript">
+						setInterval(date,1000);
+						</script>
+					</li>
+					<div id="calendar">
+						<script>
+						$('#calendar').datepicker({
+							inline: true,
+							firstDay: 0,
+							showOtherMonths: true,
+							dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+							monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+						});
+						</script>
+					</div>
+					<li id="search-note" class="img">
+						<img src="files/notifications/search.png">
+					</li>
+					<div id="search-note-menu" class="img notif-search-box">
+						<div id="search-top">Search <input type="text"/>
+							<img src="files/notifications/search.png">
+						</div>
+						<br>
+						<span id="search-text">Nothing Found</span>
+					</div>
+					<li onclick="toggle_not()" class="img">
+						<img src="files/notifications/list.png">
+					</li>
+				</ul>
+			</div>
+			<div id="notification-center">
+				<div class="not-title">
+					<img src="files/mac/calendar.png" alt="calendar"> Calendar <span class="not_mes"></span>
+				</div>
+				<ul class="not-basic">
+					<li>No Schedules Made</li>
+				</ul>
+				<div class="not-title">
+					<img src="files/notifications/app-reminders-icon.png" alt="calendar"> Reminders <span class="not_mes"></span>
+				</div>
+				<ul class="not-basic">
+					<li>No Reminders</li>
+				</ul>
+			</div>
+			<div id="contents">
+				<div class="terminal" style="display:none;">
+					<div class="title-bar">
+						<ul class="close-handlers">
+							<li><button class="close-btn" onclick="$('.terminal').hide();"></li>
+						</ul>
+						Terminal
+					</div>
+					<form id="form_terminal"action="index.html" onsubmit="return false;">
+						<input type="text" id="printTB" autofocus>
+						<button type="submit"id="submit" onclick="eval(document.getElementById('printTB').value);" style="outline:none;border:none;background:#000;cursor:inherit;"></button>
+						<div id="console" class="dos">
+							<script type="text/javascript">
+							var console = new Console('console',25,75);
+							</script>
+						</div>
+					</form>
+				</div>
+				<div class="map" style="left:-5000px;">
+					<div class="title-bar">
+						<ul class="close-handlers">
+							<li><button class="close-btn" onclick="$('.map').css({'left':'-5000px'});"></li>
+						</ul>
+						Maps
+					</div>
+					<div id="map-container">
+						<!--frame id="map-loads" src=""></frame-->
+						<div id="map_canvas"></div>
+					</div>
+					<div class="ui-resizable-handle"><img src="files/resize.png"></div>
+				</div>
+				<div class="about-mac" style="display:none;">
+					<div class="title-bar">
+						<ul class="close-handlers">
+							<li><button class="close-btn" onclick="$('.about-mac').hide();"></li>
+						</ul>
+						About This Mac
+					</div>
+					<div class="container">
+						<img src="files/macosx.png">
+						<h3 style="color:#555;">Version 10.9</h3>
+					</div>
+				</div>
+				<div class="launchpad" style="display:none;">
+					<div class="notice">
+						<img src="files/notice-info-icon.png">
+						<p>Launchpad currently in development</p>
+					</div>
+				</div>
+			</div>
+			<div class="dock">
+				<ul>
+					<li id="finder">
+						<em><span>Finder</span></em>
+						<img src="files/mac/FinderIcon.png" alt="Finder">
+					</li>
+					<li id="launchpad" onclick="$('.launchpad').fadeToggle(200);">
+						<em><span>Launchpad</span></em>
+						<img src="files/mac/launchpad.png" alt="Launchpad">
+					</li>
+					<li id="safari">
+						<em><span>Safari</span></em>
+						<img src="files/mac/safari-icon.png" alt="Safari">
+					</li>
+					<li id="mail">
+						<em><span>Mail</span></em>
+						<img src="files/mac/mail.png" alt="Mail">
+					</li>
+					<li id="map" onclick="mapshow();">
+						<em><span>Maps</span></em>
+						<img src="files/mac/map-icon.png" alt="Map">
+					</li>
+					<li id="calendar">
+						<em><span>Calendar</span></em>
+						<img src="files/mac/calendar.png" alt="calendar">
+					</li>
+					<li id="photobooth">
+						<em><span>Photobooth</span></em>
+						<img src="files/mac/photobooth.png" alt="photobooth">
+					</li>
+					<li id="ibooks">
+						<em><span>iBooks</span></em>
+						<img src="files/mac/ibooks.png" alt="ibooks">
+					</li>
+					<li id="appstore">
+						<em><span>Appstore</span></em>
+						<img src="files/mac/appstore-icon.png" alt="Appstore">
+					</li>
+					<li id="preferances">
+						<em><span>Preferances</span></em>
+						<img src="files/mac/prefapp.png" alt="preferances">
+					</li>
+					<li id="trash">
+						<em><span>Trash</span></em>
+						<img src="files/mac/trash.png" alt="Trash">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

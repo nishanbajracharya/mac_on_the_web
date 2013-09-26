@@ -1,0 +1,369 @@
+html,body {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode',Tahoma, Verdana, Arial, sans-serif;
+	/*cursor: url(../files/cursor.cur),default;*/
+	cursor:default;
+	font-size: 14px;
+	user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	overflow: hidden;
+	transition:.1s linear;
+	height: 100%;
+}
+.my-container:-webkit-full-screen, .my-container:-moz-full-screen {
+	width:100%;
+	height:100%;
+}
+#wrapper-back{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	transition:.5s linear;
+}
+#wrapper-back img{
+	width:100%;
+	height: 100%;
+	position: fixed;
+	pointer-events: none;
+}
+
+/**/
+
+/*--------Top--------*/
+.title-bar{
+	background-image: linear-gradient(bottom, rgb(172,172,172) 0%, rgb(228,228,228) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(172,172,172) 0%, rgb(228,228,228) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(172,172,172) 0%, rgb(228,228,228) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(172,172,172) 0%, rgb(228,228,228) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(172,172,172) 0%, rgb(228,228,228) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(172,172,172)),
+		color-stop(1, rgb(228,228,228))
+		);
+	width: inherit;
+	height: 22px;
+	border-radius: 3px 3px 0px 0px;
+	text-align: center;
+	user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+}
+/*------Console------*/
+.terminal{
+	position: absolute;
+	top:50px;
+	left:20px;
+	background-color: Black;
+	width: 604px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+}
+.terminal input{
+	font-family: 'Courier New', Courier,monospace;
+	width: 604px;
+	outline: none;
+	border: none;
+	background: #000;
+	color: #eee;
+	padding: 2px;
+	cursor: default;
+}
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+.dos
+{
+	font-family: 'Courier New', Courier,monospace;
+	color: #eee;
+	display:block;
+	float:left;
+	padding: 2px;
+	opacity: 0.8;
+	overflow: none;
+	height: 400px;
+	width: 600px;
+}
+#console {
+	color: #eee;
+	background: #000;
+	overflow: hidden;
+	border-radius: 3px;
+}
+/*Close Buttons*/
+.close-handlers{
+	position: absolute;
+	top:-14.5px;
+	left:4px;
+	display: inline-block;
+	list-style: none;
+	margin-left: -40px;
+}
+.close-btn {
+	font-size: 14px;
+	color: #000000;
+	width: 12px;
+	height: 14px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ff0808 29%,
+		#731b1b 65%,
+		#c21f1f);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ffffff),
+		color-stop(0.29, #ff0808),
+		color-stop(0.65, #731b1b),
+		to(#c21f1f));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #6b4c6b;
+	-moz-box-shadow:
+	0px 1px 3px rgba(000,000,000,0.5),
+	inset 0px 0px 5px rgba(161,142,016,0.6);
+	-webkit-box-shadow:
+	0px 1px 3px rgba(000,000,000,0.5),
+	inset 0px 0px 5px rgba(161,142,016,0.6);
+	box-shadow:
+	0px 1px 3px rgba(000,000,000,0.5),
+	inset 0px 0px 5px rgba(161,142,016,0.6);
+	text-shadow:
+	0px -1px 3px rgba(255,255,255,0.8),
+	0px 1px 0px rgba(255,255,255,0.3);
+}
+.close-btn:hover{
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ffffff),
+		color-stop(0.29, #ff2828),
+		color-stop(0.65, #733b3b),
+		to(#c21f1f));
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ff2828 29%,
+		#733b3b 65%,
+		#c21f1f);
+	cursor: default;
+}
+/*Maps*/
+#map_canvas {
+	width: 900px;
+	height: 600px;
+}
+.map{
+	position: absolute;
+	left:150px;
+	top:40px;
+	width: 900px;
+	height:600px;
+	background: #efefef;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+	overflow: hidden;
+}
+.map #map-container{
+	position: relative;
+	width: 900px;
+	height:588px;
+	overflow: hidden;
+}
+/**/
+.about-mac{
+	position: absolute;
+	top:40px;
+	left:250px;
+	width:350px;
+	height: 400px;
+	background: #ededed;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+}
+.about-mac .container{
+	position: absolute;
+	top:40px;
+	text-align: center;
+	width: inherit;
+}
+/*Launchpad*/
+.launchpad{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height:100%;
+	background: url(../files/mavericks_blur.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover; /*for webKit*/
+	-moz-background-size: cover; /*Mozilla*/
+	-o-background-size: cover; /*opera*/
+	background-size: cover; /*generic*/
+	opacity: 0.98;
+}
+.notice{
+	position: absolute;
+	top:35%;
+	width: 100%;
+	color: #eee;
+	font-size: 20px;
+	text-align: center;
+	line-height: 128px;
+	vertical-align: middle;
+}
+
+/*Noticifation center*/
+#notification-center{
+
+	position: fixed;
+	right: -256px;
+	top:22px;
+	height:800px;
+	width:256px;
+	background: url(../files/notifications/notification-background.png);
+	box-shadow: inset 5px 0px 5px rgba(0,0,0,0.3);
+	transition:.5s linear;
+	color: #fafeff;
+	text-shadow: 2px 1px 2px #000;
+	padding-top: 10px;
+	font-family: Arial,Helvetica;
+}
+.not-title{
+	background-image: linear-gradient(bottom, rgb(37,41,47) 0%, rgb(64,67,72) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(37,41,47) 0%, rgb(64,67,72) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(37,41,47) 0%, rgb(64,67,72) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(37,41,47) 0%, rgb(64,67,72) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(37,41,47) 0%, rgb(64,67,72) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(37,41,47)),
+		color-stop(1, rgb(64,67,72))
+		);
+	opacity: 0.8;
+	padding: 3px 32px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.8),inset 5px 0px 5px rgba(0,0,0,0.3);;
+	width: inherit;
+	height: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+.not-title img{
+	position: absolute;
+	left:8px;
+	width: 18px;
+	height:18px;
+}
+.not-title .not_mes{
+	position: absolute;
+	right:5px;
+}
+ul.not-basic{
+	list-style: none;
+}
+ul.not-basic li{
+	color: #fafeff;
+	display: block;
+	border: none;
+	outline: none;
+	margin-left: -40px;
+	padding: 2px 10px;
+	color:#ccc;
+}
+.notif-box{
+	display: none;
+	position: absolute;
+	top:25px;
+	right:115px;
+	padding:5px 10px;
+	min-width: 200px;
+	max-height: 50px;
+	border-radius: 5px;
+	color: #eee;
+	background-image: url(../files/notifications/notification-background.png);
+	border:2px solid white;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	opacity: 0.9;
+	text-align: center;
+	z-index: 2000;
+}
+.notif-search-box{
+	display: none;
+	position: absolute;
+	top:24px;
+	right:38px;
+	padding:5px 10px;
+	min-width: 300px;
+	min-height: 27px;
+	border-radius: 0px 0px 4px 4px;
+	color: #000;
+	background-color:f5f5f5;
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+	text-align: left;
+	transition:0.1s linear;
+	overflow: hidden;
+}
+.notif-search-box span{
+	position: absolute;
+	top:40px;
+	color: #000;
+}
+.notif-search-box input{
+	font-family: inherit;
+	padding: 4px 14px 4px 28px;
+	height: 25px;
+	width: 230px;
+	border-radius: 12px;
+	outline: none;
+	margin-left: 20px;
+	margin-top: 2px;
+	box-shadow: inset 0px 3px 5px rgba(0,0,0,0.1),
+	inset 0px 2px 3px rgba(0,0,0,0.2),
+	inset 0px 1px 2px rgba(0,0,0,0.1);
+	cursor: default;
+	border:none;
+	background-color: #fff;
+	background-image: url(files/notifications/search.png);
+}
+#search-top{
+	position: absolute;
+	top:0px;
+	left:0px;
+	padding: 5px 10px;
+	transition:0.1s linear;
+	background-image: linear-gradient(bottom, rgb(14,90,221) 0%, rgb(91,133,249) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(14,90,221) 0%, rgb(91,133,249) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(14,90,221) 0%, rgb(91,133,249) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(14,90,221) 0%, rgb(91,133,249) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(14,90,221) 0%, rgb(91,133,249) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(14,90,221)),
+		color-stop(1, rgb(91,133,249))
+		);
+	color:#fff;
+}
+#search-top img{
+	position: absolute;
+	top:10px;
+	left:85px;
+	width: 22px;
+	height: 22px;
+}
+/**/
+.ui-resizable-handle{
+	position: absolute;
+	right:0px;
+	bottom: -2px;
+}
